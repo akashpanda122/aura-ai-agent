@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  .dark {
+    --background: 351 100% 97%; /* Blush Pink #FDECEF */
+    --foreground: 312 29% 32%; /* Dusty Mauve #8A4D76 */
+    --card: 351 100% 97%; /* Blush Pink #FDECEF */
+    --card-foreground: 312 29% 32%; /* Dusty Mauve #8A4D76 */
+    --popover: 295 33% 87%; /* Soft Lilac #DCC6E0 */
+    --popover-foreground: 312 29% 32%; /* Dusty Mauve #8A4D76 */
+    --primary: 340 100% 64%; /* Hot Pink Pop #FF4F81 */
+    --primary-foreground: 351 100% 97%; /* Blush Pink #FDECEF */
+    --secondary: 42 100% 91%; /* Pale Apricot #FFECD2 */
+    --secondary-foreground: 312 29% 32%; /* Dusty Mauve #8A4D76 */
+    --muted: 42 100% 91%; /* Pale Apricot #FFECD2 */
+    --muted-foreground: 312 29% 32%; /* Dusty Mauve #8A4D76 */
+    --accent: 51 100% 50%; /* Citrine Yellow #FFD300 */
+    --accent-foreground: 312 29% 32%; /* Dusty Mauve #8A4D76 */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 351 100% 97%;
+    --border: 295 33% 87%; /* Soft Lilac #DCC6E0 */
+    --input: 295 33% 87%; /* Soft Lilac #DCC6E0 */
+    --ring: 340 100% 64%; /* Hot Pink Pop #FF4F81 */
+    --radius: 0.75rem;
+  }
+
+  :root {
+    --background: 351 100% 97%; /* Blush Pink #FDECEF */
+    --foreground: 312 29% 32%; /* Dusty Mauve #8A4D76 */
+    --card: 351 100% 97%; /* Blush Pink #FDECEF */
+    --card-foreground: 312 29% 32%; /* Dusty Mauve #8A4D76 */
+    --popover: 295 33% 87%; /* Soft Lilac #DCC6E0 */
+    --popover-foreground: 312 29% 32%; /* Dusty Mauve #8A4D76 */
+    --primary: 340 100% 64%; /* Hot Pink Pop #FF4F81 */
+    --primary-foreground: 351 100% 97%; /* Blush Pink #FDECEF */
+    --primary-light: 340 100% 70%; /* Lighter Hot Pink */
+    --primary-light-foreground: 351 100% 97%;
+    --secondary: 42 100% 91%; /* Pale Apricot #FFECD2 */
+    --secondary-foreground: 312 29% 32%; /* Dusty Mauve #8A4D76 */
+    --muted: 295 33% 87%; /* Soft Lilac #DCC6E0 */
+    --muted-foreground: 312 29% 32%; /* Dusty Mauve #8A4D76 */
+    --accent: 51 100% 50%; /* Citrine Yellow #FFD300 */
+    --accent-foreground: 312 29% 32%; /* Dusty Mauve #8A4D76 */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 351 100% 97%;
+    --border: 295 33% 87%; /* Soft Lilac #DCC6E0 */
+    --input: 295 33% 87%; /* Soft Lilac #DCC6E0 */
+    --ring: 340 100% 64%; /* Hot Pink Pop #FF4F81 */
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+::selection {
+  background-color: #ff4f81; /* Hot Pink Pop */
+  color: #fdecef; /* Blush Pink */
+}
+
+.btn-primary {
+  z-index: 20;
+  background: linear-gradient(135deg, #ff4f81, #8a4d76); /* Hot Pink to Dusty Mauve */
+  color: #fdecef; /* Blush Pink text */
+  text-align: center;
+  background-image: radial-gradient(circle farthest-side at 30% 0, rgba(255, 255, 255, 0.12), transparent);
+  box-shadow:
+    inset 1px 1px 2px rgba(255, 255, 255, 0.24),
+    0 1px 3px rgba(255, 79, 129, 0.24),
+    0 2px 6px rgba(255, 79, 129, 0.24),
+    0 4px 8px rgba(255, 79, 129, 0.12),
+    0 16px 32px -8px rgba(255, 79, 129, 0.48);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #ffd300, #ff4f81); /* Citrine Yellow to Hot Pink */
+  color: #8a4d76; /* Dusty Mauve text */
+  transform: scale(1.05) translateY(-4px);
+  box-shadow:
+    inset 0 0 rgba(255, 255, 255, 0.24),
+    0 1px 3px rgba(255, 211, 0, 0.24),
+    0 2px 6px rgba(255, 211, 0, 0.24),
+    0 4px 8px rgba(255, 211, 0, 0.12),
+    0 20px 40px -8px rgba(255, 211, 0, 0.64);
+}
+
+.btn-secondary {
+  z-index: 20;
+  background-color: rgba(220, 198, 224, 0.3); /* Soft Lilac with transparency */
+  color: #8a4d76; /* Dusty Mauve text */
+  text-align: center;
+  border: 1px solid rgba(138, 77, 118, 0.2); /* Dusty Mauve border */
+  background-image: radial-gradient(circle farthest-side at 35% -50%, rgba(255, 236, 210, 0.08), rgba(255, 236, 210, 0));
+  box-shadow: 0 8px 40px -20px rgba(220, 198, 224, 0.2), inset 1px 1px rgba(255, 236, 210, 0.08), inset 0 0 0 1px
+    rgba(220, 198, 224, 0.06);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 236, 210, 0.4); /* Pale Apricot with transparency */
+  color: #8a4d76; /* Dusty Mauve text */
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 8px 40px -20px rgba(255, 236, 210, 0.32), inset 1px 1px rgba(255, 236, 210, 0.08), inset 0 0 0 1px
+    rgba(255, 236, 210, 0.1);
+}
+
+:root {
+  --content-background: #fdecef; /* Blush Pink */
+  --spot-light-size: 800px;
+  --spot-light-color: rgba(255, 79, 129, 0.15); /* Hot Pink Pop with transparency */
+  --card-border-color: rgba(138, 77, 118, 0.4); /* Dusty Mauve */
+}
+
+.newsletter-form {
+  --primary: #ff4f81; /* Hot Pink Pop */
+  --primary-dark: #8a4d76; /* Dusty Mauve */
+  --primary-darkest: #8a4d76;
+  --input-placeholder: #8a4d76; /* Dusty Mauve */
+  --input-text: #8a4d76; /* Dusty Mauve */
+  --border-default: #dcc6e0; /* Soft Lilac */
+  --border-active: #ff4f81; /* Hot Pink Pop */
+  --background: #fdecef; /* Blush Pink */
+  --button-text: #fdecef; /* Blush Pink */
+  --success: #ff4f81; /* Hot Pink Pop */
+  --trails: rgba(255, 79, 129, 0.15); /* Hot Pink Pop with transparency */
+}
+
+.pricing {
+  background: radial-gradient(
+    ellipse 80% 50% at 50% -20%,
+    rgba(220, 198, 224, 0.6) /* Soft Lilac */,
+    rgba(255, 236, 210, 0.3)
+  ); /* Pale Apricot */
+}
+
+.footer::before {
+  background: radial-gradient(
+    50% 56400% at 50% 100%,
+    rgba(138, 77, 118, 0.2) 0% /* Dusty Mauve */,
+    rgba(220, 198, 224, 0) 100%
+  ); /* Soft Lilac */
+  bottom: 0;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  color: #8a4d76; /* Dusty Mauve */
+}

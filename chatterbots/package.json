@@ -1,0 +1,56 @@
+{
+  "name": "aura-ai-agentic-chatterbot",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy:gke": "npm run build && docker build -t gcr.io/$GCP_PROJECT_ID/aura-ai:latest . && docker push gcr.io/$GCP_PROJECT_ID/aura-ai:latest && kubectl apply -f k8s/",
+    "k8s:apply": "kubectl apply -f k8s/",
+    "k8s:delete": "kubectl delete -f k8s/",
+    "gemini:test": "node scripts/test-gemini.js"
+  },
+  "dependencies": {
+    "@google-ai/generativelanguage": "^2.6.0",
+    "@google/generative-ai": "^0.21.0",
+    "@google-cloud/aiplatform": "^3.25.0",
+    "@google-cloud/container": "^5.8.0",
+    "@google-cloud/monitoring": "^4.2.0",
+    "@google-cloud/logging": "^11.2.0",
+    "@tailwindcss/vite": "^4.1.8",
+    "classnames": "^2.5.1",
+    "eventemitter3": "^5.0.1",
+    "path": "^0.12.7",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.8",
+    "vite": "^6.3.5",
+    "zustand": "^5.0.4",
+    "axios": "^1.7.7",
+    "ws": "^8.18.0",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/uuid": "^10.0.0",
+    "@types/ws": "^8.5.12",
+    "lodash": "^4.17.21",
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0",
+    "@google-cloud/functions-framework": "^3.4.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "agentic-ai",
+    "google-cloud",
+    "kubernetes",
+    "gemini",
+    "microservices",
+    "mcp",
+    "a2a-protocol"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Aura",
+  "description": "Your Personalized Therapist that truly cares.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
